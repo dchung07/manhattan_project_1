@@ -1,2 +1,2 @@
-# Manhtattan_Project First Ediction
+# Manhtattan_Project First Edition
 
