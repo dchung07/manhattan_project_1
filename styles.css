@@ -1,0 +1,35 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: 'continue';
+    src: url('manhattan_project_1/fonts/no_continue/gomarice_no_continue.ttf') format('truetype');
+}
+
+#mainBody {
+    background-color: black;
+}
+
+#mainBodyTitle {
+    background-image: linear-gradient(235deg, #ff00ff, #00ffcc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: continue;
+}
+
+button {
+    background: linear-gradient(135deg, #00ffcc, #00ff99);
+    color: black;
+    font-size: 2rem;
+    padding: 1px 10px;
+    margin-top: 10px;
+    border: none;
+    display: inline-block;
+    /* border-radius: 10px; */
+    cursor: pointer;
+    font-family: 'continue';
+    transition: background 0.3s, transform 0.2s;
+}
