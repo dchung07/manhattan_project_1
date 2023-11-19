@@ -5,22 +5,24 @@
 
 @font-face {
     font-family: 'continue';
-    src: url('manhattan_project_1/fonts/no-continue/gomarice_no_continue.ttf') format('truetype');
+    src: url('fonts/no-continue/gomarice_no_continue.ttf') format('opentype');
 }
 
 #mainBody {
     background-color: black;
+
 }
 
 #mainBodyTitle {
-    background-image: linear-gradient(235deg, #ff00ff, #00ffcc);
+    background-image: linear-gradient(235deg, rgb(9, 206, 255), #cf58ab);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-family: continue;
+    font-family: 'continue';
+    font-size: 4rem;
 }
 
-button {
+.playButton {
     background: linear-gradient(135deg, #00ffcc, #00ff99);
     color: black;
     font-size: 2rem;
@@ -32,4 +34,19 @@ button {
     cursor: pointer;
     font-family: 'continue';
     transition: background 0.3s, transform 0.2s;
+    
 }
+
+.createdBy {
+    color: white;
+}
+
+.container {
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+
