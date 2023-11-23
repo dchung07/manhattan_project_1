@@ -45,6 +45,18 @@
     text-align: center;
 }
 
+#questionPageContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 2px solid #333; 
+    padding: 40px;
+    background-color: #f0f0f0;
+    width: 80%;
+}
+
 #indexContainer {
     position: absolute;
     top: 50%;
@@ -62,7 +74,7 @@
     background-clip: text;
     color: transparent;
     font-family: 'continue';
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 #pointsTag {
@@ -72,7 +84,7 @@
     background-clip: text;
     color: transparent;
     font-family: 'continue';
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 #question_page_body {
@@ -102,17 +114,18 @@
     background-clip: text;
     color: transparent;
     font-family: 'continue';
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 #question {
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
 }
 
 #answer {
     color: #cf58ab;
     font-family: 'continue';
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 #resultContainer {
