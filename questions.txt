@@ -1,2 +1,5 @@
-1;How many continents are there in the world?;7
-2;Favourite drink of all time?;water
+1;How many continents are there in the world?;7;4;6;8;7
+2;Most consumed drink of all time?;cola;water;beer;orange juice;water
+3;Best country in the world?;USA;Japan;Germany;Australia;Australia
+4;Most read manga of all time?;Naruto;DBZ;One Piece;Detective Conan;One Piece
+5;What is the antagonist of Omega-3?;Omega-6;Alpha-5;Sigma-7;Beta-4;Omega-6

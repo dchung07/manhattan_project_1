@@ -1,5 +1,5 @@
 const pointsTag = document.getElementById("pointsTag");
-const optionOneButton = document.getElementById("optionOne");
+const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
 const option3 = document.getElementById("option3");
 const option4 = document.getElementById("option4");
@@ -12,6 +12,9 @@ const answer = document.getElementById("answer");
 let questionNumberCount = 1;
 let points = 0;
 let correct = 1;
+let answerConfirm = "";
+
+let picked = false;
 
 fetch('questions.txt')
   .then(response => {
@@ -35,25 +38,76 @@ fetch('questions.txt')
       return;
     }
     
-    const line = lines[questionNumberCount - 1];
-    const components = line.split(';');
-    
-    if (components.length >= 3) {
-      const number = components[0];
-      const questionText = components[1];
-      const answerText = components[2];
+    function displayQuestion(questionIndex) {
+      const line = lines[questionIndex - 1];
+      const components = line.split(';');
   
-      questionNumber.innerHTML = number;
-      question.innerHTML = questionText;
-      answer.innerHTML = answerText;
-    } else {
-      console.error('Invalid data format for question:', line);
+      if (components.length >= 6) {
+        const number = components[0];
+        const questionText = components[1];
+        const optionOne = components[2];
+        const optionTwo = components[3];
+        const optionThree = components[4];
+        const optionFour = components[5];
+        const theAnswer = components[6];
+  
+        questionNumber.innerHTML = number;
+        question.innerHTML = questionText;
+  
+        option1.innerHTML = optionOne;
+        option2.innerHTML = optionTwo;
+        option3.innerHTML = optionThree;
+        option4.innerHTML = optionFour;
+  
+        answer.innerHTML = ''; 
+        answerConfirm = theAnswer; 
+  
+        picked = false;
+      } else {
+        console.error('Invalid data format for question:', line);
+      }
     }
-  }
   
-
-
-optionOneButton.addEventListener('click', function(){
-    pointsTag.innerHTML = "points: " + points;
-
-});
+    displayQuestion(questionNumberCount); 
+  
+    function checkAnswer(selectedOption) {
+      if (!picked) {
+        picked = true; 
+        if (selectedOption.innerHTML.trim() === answerConfirm.trim()) {
+          answer.innerHTML = "Correct! + 1 point!";
+          points += 1;
+          pointsTag.innerHTML = "points: " + points;
+        } else {
+          answer.innerHTML = "Wrong! The real answer was: " + answerConfirm;
+        }
+        if(questionNumberCount >= lines.length) {
+          localStorage.setItem('points', points);
+          points = 0;
+          setTimeout(function() {
+            window.location.href = 'end_page.html'
+          }, 1000);
+        } else {
+          questionNumberCount += 1; 
+          setTimeout(function () {
+            displayQuestion(questionNumberCount); 
+          }, 1000); 
+        }
+      }
+    }
+  
+    option1.addEventListener('click', function () {
+      checkAnswer(option1);
+    });
+  
+    option2.addEventListener('click', function () {
+      checkAnswer(option2);
+    });
+  
+    option3.addEventListener('click', function () {
+      checkAnswer(option3);
+    });
+  
+    option4.addEventListener('click', function () {
+      checkAnswer(option4);
+    });
+  }
