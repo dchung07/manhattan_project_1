@@ -1,0 +1,1 @@
+my scipt.js does everything the questions.js file does and also does the end_page.html and the result.js - jinx 24/11/23
