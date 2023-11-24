@@ -34,7 +34,17 @@
     cursor: pointer;
     font-family: 'continue';
     min-width: 20%;
+    transition: all 0.3s;
     
+}
+
+.playButton:hover:not([disabled]){
+    background: #222;
+    color: #fff;
+}
+
+.playButton:disabled{
+    cursor: no-drop;
 }
 
 .createdBy {
@@ -170,4 +180,12 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.correct{
+    background: linear-gradient(135deg, #00ff99, #bbff00);
+}
+
+.incorrect{
+    background: linear-gradient(135deg, #ff8800, #ff0000);
 }
